@@ -236,7 +236,7 @@ func is2xx(status int) bool {
 }
 
 type Bet struct {
-	HomeTeamScore string `json:"homeTeamScore_____,omitempty"`
+	HomeTeamScore string `json:"homeTeamScore,omitempty"`
 	AwayTeamScore string `json:"awayTeamScore,omitempty"`
 	Championship  string `json:"championship,omitempty"`
 	Match         string `json:"match,omitempty"`
