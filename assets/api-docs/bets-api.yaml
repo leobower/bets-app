@@ -36,7 +36,7 @@ paths:
           application/json:
             schema:
               properties:
-                homeTeamScore:
+                homeTeamScoressss_:
                   type: string
                 awayTeamScore:
                   type: string
@@ -62,7 +62,7 @@ paths:
                     email: joe@doe.com
                     championship: Uefa Champions League
                     awayTeamScore: '2'
-                    homeTeamScore: '3'
+                    homeTeamScoressss_: '3'
           description: ''
       operationId: create-bet
       summary: Create Bet
@@ -81,20 +81,20 @@ components:
           type: string
         awayTeamScore:
           type: string
-        homeTeamScore:
+        homeTeamScoressss_:
           type: string
       example:
         match: 1X-DC
         email: joe@doe.com
         championship: Uefa Champions League
         awayTeamScore: '2'
-        homeTeamScore: '3'
+        homeTeamScoressss_: '3'
     request-create-bet:
       title: Root Type for request-create-bet
       description: Request data to create a bet
       type: object
       properties:
-        homeTeamScore:
+        homeTeamScoressss_:
           type: string
         awayTeamScore:
           type: string
@@ -105,7 +105,7 @@ components:
         email:
           type: string
       example:
-        homeTeamScore: '3'
+        homeTeamScoressss_: '3'
         awayTeamScore: '2'
         championship: Uefa Champions League
         match: 1X-DC
