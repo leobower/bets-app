@@ -48,8 +48,7 @@ paths:
                   type: string
         required: true
       tags:
-        - bets 
-        #- description: Sem Description
+        - bets
       responses:
         '201':
           content:
