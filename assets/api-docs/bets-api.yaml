@@ -49,6 +49,7 @@ paths:
         required: true
       tags:
         - bets
+        #- description: Sem Description
       responses:
         '201':
           content:
