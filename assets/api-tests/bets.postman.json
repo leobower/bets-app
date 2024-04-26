@@ -42,7 +42,7 @@
                 "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"homeTeamScore\": \"3\",\n  \"awayTeamScore\": \"2\",\n  \"championship\": \"Uefa Champions League\",\n  \"match\": \"1X-DC\",\n  \"email\": \"joe@doe.com\"\n}",
+                  "raw": "{\n  \"homeTeamScores\": \"3\",\n  \"awayTeamScore\": \"2\",\n  \"championship\": \"Uefa Champions League\",\n  \"match\": \"1X-DC\",\n  \"email\": \"joe@doe.com\"\n}",
                   "options": {
                     "raw": {
                       "language": "json"
