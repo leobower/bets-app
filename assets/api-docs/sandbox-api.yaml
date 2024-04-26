@@ -1,0 +1,1005 @@
+openapi: 3.0.1
+info:
+  title: 'CarePlus Sandbox '
+  description: Sandbox Clean Architecture API Development.
+  contact:
+    name: careplus
+    email: careplus@careplus.com.br
+  version: '1.0'
+  applicationCode: e7440bda1c4f472c8f9b15baceebee95
+  applicationName: CarePlus.Sandbox.Api
+  environment: Development
+  applicationType: ApiBFF
+servers:
+  - url: https://localhost:7265
+paths:
+  /api/v1/Authentication/SystemTokenAuthenticate:
+    post:
+      tags:
+        - Authentication
+      summary: Retorna o token de autorização usado na autenticação do  apigee teste, este metodo e somente exemplo ( não  devera ser levado  mara nenhum projeto)
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CarePlus.Sandbox.Application.Authentication.Requests.AuthenticationRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/CarePlus.Sandbox.Application.Authentication.Requests.AuthenticationRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/CarePlus.Sandbox.Application.Authentication.Requests.AuthenticationRequest'
+      responses:
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+  /api/v1/Authentication/identity/tokenauthenticate:
+    post:
+      tags:
+        - Authentication
+      summary: Get Authorization login in applications msal
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CarePlus.Sandbox.Application.Authorization.Params.AuthorizationRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/CarePlus.Sandbox.Application.Authorization.Params.AuthorizationRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/CarePlus.Sandbox.Application.Authorization.Params.AuthorizationRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/CarePlus.Shared.Core.Wrapper.Result`1[[CarePlus.Sandbox.Api.Controllers.Authentication.AuthenticationController+AuthorizationTokenResponse, CarePlus.Sandbox.Api, Version=0.0.10.0, Culture=neutral, PublicKeyToken=null]]'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CarePlus.Shared.Core.Wrapper.Result`1[[CarePlus.Sandbox.Api.Controllers.Authentication.AuthenticationController+AuthorizationTokenResponse, CarePlus.Sandbox.Api, Version=0.0.10.0, Culture=neutral, PublicKeyToken=null]]'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/CarePlus.Shared.Core.Wrapper.Result`1[[CarePlus.Sandbox.Api.Controllers.Authentication.AuthenticationController+AuthorizationTokenResponse, CarePlus.Sandbox.Api, Version=0.0.10.0, Culture=neutral, PublicKeyToken=null]]'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+  /api/v1/Beneficiary/GetByIdQuery:
+    get:
+      tags:
+        - Beneficiary
+      summary: LastBeneficiaryId
+      parameters:
+        - name: CodSub
+          in: query
+          description: ''
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+  /api/v1/Beneficiary/GetByCodSub:
+    get:
+      tags:
+        - Beneficiary
+      summary: GetByCodSub Beneficiary
+      parameters:
+        - name: CodSub
+          in: query
+          description: ''
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+  /api/v1/Beneficiary/List:
+    get:
+      tags:
+        - Beneficiary
+      summary: List all Beneficiary
+      responses:
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+  /api/v1/Contact/GetByCodSub:
+    get:
+      tags:
+        - Contact
+      summary: GetByCodSub Contact
+      parameters:
+        - name: CodSub
+          in: query
+          description: ''
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/CarePlus.Shared.Core.Wrapper.Result`1[[CarePlus.Sandbox.Application.NamedInsured.Responses.ContactResponse, CarePlus.Sandbox.Application, Version=0.0.10.0, Culture=neutral, PublicKeyToken=null]]'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CarePlus.Shared.Core.Wrapper.Result`1[[CarePlus.Sandbox.Application.NamedInsured.Responses.ContactResponse, CarePlus.Sandbox.Application, Version=0.0.10.0, Culture=neutral, PublicKeyToken=null]]'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/CarePlus.Shared.Core.Wrapper.Result`1[[CarePlus.Sandbox.Application.NamedInsured.Responses.ContactResponse, CarePlus.Sandbox.Application, Version=0.0.10.0, Culture=neutral, PublicKeyToken=null]]'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+  /api/v1/CurrentUserInfo/Language:
+    get:
+      tags:
+        - CurrentUserInfo
+      summary: LanguageLocale
+      parameters:
+        - name: Language-Locale
+          in: header
+          description: ''
+          schema:
+            type: string
+      responses:
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+  /api/v1/CurrentUserInfo/List:
+    get:
+      tags:
+        - CurrentUserInfo
+      summary: List all CurrentUserInfo
+      responses:
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+  /api/v1/Departament/Create:
+    post:
+      tags:
+        - Departament
+      summary: Criar um departamentos
+      description: Enviar dados para o request com os parametro necessarios para ser criado um departemento
+      requestBody:
+        description: Dados de entrada para criado um departemento
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CarePlus.Sandbox.Application.Department.Commands.AddDepartmentRequestCommand'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/CarePlus.Sandbox.Application.Department.Commands.AddDepartmentRequestCommand'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/CarePlus.Sandbox.Application.Department.Commands.AddDepartmentRequestCommand'
+      responses:
+        '201':
+          description: Mensagem sucesso o  registro salvo no banco de dados.
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/CarePlus.Shared.Core.Wrapper.Result'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CarePlus.Shared.Core.Wrapper.Result'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/CarePlus.Shared.Core.Wrapper.Result'
+        '400':
+          description: Houve um problema com os parâmetros. Verifique o corpo da mensagem para obter mais ajuda.
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CarePlus.Shared.Core.Wrapper.ResponseNotificationModel'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CarePlus.Shared.Core.Wrapper.ResponseNotificationModel'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CarePlus.Shared.Core.Wrapper.ResponseNotificationModel'
+        '404':
+          description: O recurso solicitado não existe no servidor.
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+        '409':
+          description: Houve um problema, Você não pode ter dois registro com o mesmo ID .
+          content:
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CarePlus.Shared.Core.Wrapper.ResponseNotificationModel'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CarePlus.Shared.Core.Wrapper.ResponseNotificationModel'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CarePlus.Shared.Core.Wrapper.ResponseNotificationModel'
+  /api/v1/Departament/List:
+    get:
+      tags:
+        - Departament
+      summary: Busca uma lista de Todos os departamentos
+      description: Obtém dados da API com base nos parâmetros fornecidos.
+      parameters:
+        - name: Code
+          in: query
+          schema:
+            type: string
+        - name: SearchString
+          in: query
+          schema:
+            type: string
+        - name: OrderBy
+          in: query
+          schema:
+            type: string
+        - name: SearchOrder
+          in: query
+          schema:
+            type: string
+        - name: Limit
+          in: query
+          schema:
+            type: integer
+            format: int32
+        - name: Page
+          in: query
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: Mensagem sucesso foi encontrado registro no banco de dados, quando  não encontrar os registros irá retornar a mensagem de erro - registro(s) não encontrado(s).
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/CarePlus.Shared.Core.Wrapper.Result`1[[CarePlus.Sandbox.Application.Department.Responses.DepartmentResponse, CarePlus.Sandbox.Application, Version=0.0.10.0, Culture=neutral, PublicKeyToken=null]]'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CarePlus.Shared.Core.Wrapper.Result`1[[CarePlus.Sandbox.Application.Department.Responses.DepartmentResponse, CarePlus.Sandbox.Application, Version=0.0.10.0, Culture=neutral, PublicKeyToken=null]]'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/CarePlus.Shared.Core.Wrapper.Result`1[[CarePlus.Sandbox.Application.Department.Responses.DepartmentResponse, CarePlus.Sandbox.Application, Version=0.0.10.0, Culture=neutral, PublicKeyToken=null]]'
+        '400':
+          description: Houve um problema com os parâmetros. Verifique o corpo da mensagem para obter mais ajuda.
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/CarePlus.Shared.Core.Wrapper.Result`1[[System.Collections.Generic.List`1[[CarePlus.Shared.Core.Wrapper.ResponseNotificationModel, CarePlus.Shared.Core, Version=2.0.15.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CarePlus.Shared.Core.Wrapper.Result`1[[System.Collections.Generic.List`1[[CarePlus.Shared.Core.Wrapper.ResponseNotificationModel, CarePlus.Shared.Core, Version=2.0.15.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/CarePlus.Shared.Core.Wrapper.Result`1[[System.Collections.Generic.List`1[[CarePlus.Shared.Core.Wrapper.ResponseNotificationModel, CarePlus.Shared.Core, Version=2.0.15.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'
+        '404':
+          description: O recurso solicitado não existe no servidor.
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+  /api/v1/Departament/GetByName:
+    get:
+      tags:
+        - Departament
+      summary: Busca um departamentos por Name
+      description: Obtém dados da API com base nos parâmetros fornecidos.
+      parameters:
+        - name: Name
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Mensagem sucesso foi encontrado registro no banco de dados, quando  não encontrar os registros irá retornar a mensagem de erro - registro(s) não encontrado(s).
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/CarePlus.Shared.Core.Wrapper.Result`1[[CarePlus.Sandbox.Application.Department.Responses.DepartmentResponse, CarePlus.Sandbox.Application, Version=0.0.10.0, Culture=neutral, PublicKeyToken=null]]'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CarePlus.Shared.Core.Wrapper.Result`1[[CarePlus.Sandbox.Application.Department.Responses.DepartmentResponse, CarePlus.Sandbox.Application, Version=0.0.10.0, Culture=neutral, PublicKeyToken=null]]'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/CarePlus.Shared.Core.Wrapper.Result`1[[CarePlus.Sandbox.Application.Department.Responses.DepartmentResponse, CarePlus.Sandbox.Application, Version=0.0.10.0, Culture=neutral, PublicKeyToken=null]]'
+        '400':
+          description: Houve um problema com os parâmetros. Verifique o corpo da mensagem para obter mais ajuda.
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/CarePlus.Shared.Core.Wrapper.Result`1[[System.Collections.Generic.List`1[[CarePlus.Shared.Core.Wrapper.ResponseNotificationModel, CarePlus.Shared.Core, Version=2.0.15.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CarePlus.Shared.Core.Wrapper.Result`1[[System.Collections.Generic.List`1[[CarePlus.Shared.Core.Wrapper.ResponseNotificationModel, CarePlus.Shared.Core, Version=2.0.15.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/CarePlus.Shared.Core.Wrapper.Result`1[[System.Collections.Generic.List`1[[CarePlus.Shared.Core.Wrapper.ResponseNotificationModel, CarePlus.Shared.Core, Version=2.0.15.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'
+        '404':
+          description: O recurso solicitado não existe no servidor.
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+  /api/v1/NetworkAccredited/GetByNamedinsuredId:
+    get:
+      tags:
+        - NetworkAccredited
+      summary: GetByCodSub Contact
+      parameters:
+        - name: CodSub
+          in: query
+          description: ''
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/CarePlus.Shared.Core.Wrapper.Result`1[[CarePlus.Sandbox.Application.NetworkAccredited.Responses.NamedinsuredResponse, CarePlus.Sandbox.Application, Version=0.0.10.0, Culture=neutral, PublicKeyToken=null]]'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CarePlus.Shared.Core.Wrapper.Result`1[[CarePlus.Sandbox.Application.NetworkAccredited.Responses.NamedinsuredResponse, CarePlus.Sandbox.Application, Version=0.0.10.0, Culture=neutral, PublicKeyToken=null]]'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/CarePlus.Shared.Core.Wrapper.Result`1[[CarePlus.Sandbox.Application.NetworkAccredited.Responses.NamedinsuredResponse, CarePlus.Sandbox.Application, Version=0.0.10.0, Culture=neutral, PublicKeyToken=null]]'
+        '404':
+          description: Not Found
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Microsoft.AspNetCore.Mvc.ProblemDetails'
+components:
+  schemas:
+    CarePlus.Sandbox.Api.Controllers.Authentication.AuthenticationController+AuthorizationTokenResponse:
+      type: object
+      properties:
+        token:
+          type: string
+          nullable: true
+        viewToken:
+          type: string
+          nullable: true
+        refreshToken:
+          type: string
+          nullable: true
+        userImageURL:
+          type: string
+          nullable: true
+        refreshTokenExpiryTime:
+          type: string
+          format: date-time
+      additionalProperties: false
+    CarePlus.Sandbox.Application.Authentication.Requests.AuthenticationRequest:
+      type: object
+      properties:
+        apiKeyApplication:
+          type: string
+          nullable: true
+      additionalProperties: false
+    CarePlus.Sandbox.Application.Authorization.Params.AuthorizationRequest:
+      required:
+        - idToken
+      type: object
+      properties:
+        idToken:
+          minLength: 1
+          type: string
+      additionalProperties: false
+    CarePlus.Sandbox.Application.Department.Commands.AddDepartmentRequestCommand:
+      type: object
+      properties:
+        messageType:
+          type: string
+          nullable: true
+          readOnly: true
+        aggregateId:
+          type: string
+          format: uuid
+          readOnly: true
+        timestamp:
+          type: string
+          format: date-time
+          readOnly: true
+        name:
+          type: string
+          nullable: true
+        password:
+          type: string
+          nullable: true
+        email:
+          type: string
+          nullable: true
+        externalAttendance:
+          type: string
+          nullable: true
+        useRa:
+          type: boolean
+          nullable: true
+        haveSurvey:
+          type: boolean
+          nullable: true
+        useTickets:
+          type: boolean
+          nullable: true
+        useRo:
+          type: boolean
+          nullable: true
+        managerEmail:
+          type: string
+          nullable: true
+        id:
+          type: integer
+          format: int32
+          nullable: true
+        showProactiveFollowUp:
+          type: boolean
+          nullable: true
+        validationResult:
+          $ref: '#/components/schemas/FluentValidation.Results.ValidationResult'
+      additionalProperties: false
+    CarePlus.Sandbox.Application.Department.Responses.DepartmentResponse:
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: true
+        password:
+          type: string
+          nullable: true
+        email:
+          type: string
+          nullable: true
+        externalAttendance:
+          type: string
+          nullable: true
+        useRa:
+          type: boolean
+          nullable: true
+        haveSurvey:
+          type: boolean
+          nullable: true
+        useTickets:
+          type: boolean
+          nullable: true
+        useRo:
+          type: boolean
+          nullable: true
+        managerEmail:
+          type: string
+          nullable: true
+        id:
+          type: integer
+          format: int32
+          nullable: true
+        showProactiveFollowUp:
+          type: boolean
+          nullable: true
+      additionalProperties: false
+    CarePlus.Sandbox.Application.NamedInsured.Responses.ContactResponse:
+      type: object
+      properties:
+        codSub:
+          type: integer
+          format: int32
+          nullable: true
+        name:
+          type: string
+          nullable: true
+        areaCode:
+          type: string
+          nullable: true
+        telephone:
+          type: integer
+          format: int32
+          nullable: true
+      additionalProperties: false
+    CarePlus.Sandbox.Application.NetworkAccredited.Responses.NamedinsuredResponse:
+      type: object
+      properties:
+        codSub:
+          type: integer
+          format: int32
+        codeName:
+          type: string
+          nullable: true
+        name:
+          type: string
+          nullable: true
+      additionalProperties: false
+    CarePlus.Shared.Core.Wrapper.Extensions.LinkedResource:
+      type: object
+      properties:
+        href:
+          type: string
+          nullable: true
+      additionalProperties: false
+    CarePlus.Shared.Core.Wrapper.ResponseNotificationModel:
+      type: object
+      properties:
+        errorCode:
+          type: string
+          nullable: true
+        key:
+          type: string
+          nullable: true
+        details:
+          type: string
+          nullable: true
+        message:
+          type: string
+          nullable: true
+      additionalProperties: false
+    CarePlus.Shared.Core.Wrapper.Result:
+      type: object
+      properties:
+        aggregateId:
+          type: string
+          format: uuid
+          readOnly: true
+        executed:
+          type: string
+          format: date-time
+          readOnly: true
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/CarePlus.Shared.Core.Wrapper.ResponseNotificationModel'
+          nullable: true
+        succeeded:
+          type: boolean
+        title:
+          type: string
+          nullable: true
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/CarePlus.Shared.Core.Wrapper.ResponseNotificationModel'
+          nullable: true
+        status:
+          type: integer
+          format: int32
+          nullable: true
+        currentPage:
+          type: integer
+          format: int32
+        totalItems:
+          type: integer
+          format: int32
+        totalPages:
+          type: integer
+          format: int32
+        links:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/CarePlus.Shared.Core.Wrapper.Extensions.LinkedResource'
+          nullable: true
+      additionalProperties: {}
+    CarePlus.Shared.Core.Wrapper.Result`1[[CarePlus.Sandbox.Api.Controllers.Authentication.AuthenticationController+AuthorizationTokenResponse, CarePlus.Sandbox.Api, Version=0.0.10.0, Culture=neutral, PublicKeyToken=null]]:
+      type: object
+      properties:
+        aggregateId:
+          type: string
+          format: uuid
+          readOnly: true
+        executed:
+          type: string
+          format: date-time
+          readOnly: true
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/CarePlus.Shared.Core.Wrapper.ResponseNotificationModel'
+          nullable: true
+        succeeded:
+          type: boolean
+        title:
+          type: string
+          nullable: true
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/CarePlus.Shared.Core.Wrapper.ResponseNotificationModel'
+          nullable: true
+        status:
+          type: integer
+          format: int32
+          nullable: true
+        currentPage:
+          type: integer
+          format: int32
+        totalItems:
+          type: integer
+          format: int32
+        totalPages:
+          type: integer
+          format: int32
+        links:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/CarePlus.Shared.Core.Wrapper.Extensions.LinkedResource'
+          nullable: true
+        data:
+          $ref: '#/components/schemas/CarePlus.Sandbox.Api.Controllers.Authentication.AuthenticationController+AuthorizationTokenResponse'
+      additionalProperties: {}
+    CarePlus.Shared.Core.Wrapper.Result`1[[CarePlus.Sandbox.Application.Department.Responses.DepartmentResponse, CarePlus.Sandbox.Application, Version=0.0.10.0, Culture=neutral, PublicKeyToken=null]]:
+      type: object
+      properties:
+        aggregateId:
+          type: string
+          format: uuid
+          readOnly: true
+        executed:
+          type: string
+          format: date-time
+          readOnly: true
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/CarePlus.Shared.Core.Wrapper.ResponseNotificationModel'
+          nullable: true
+        succeeded:
+          type: boolean
+        title:
+          type: string
+          nullable: true
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/CarePlus.Shared.Core.Wrapper.ResponseNotificationModel'
+          nullable: true
+        status:
+          type: integer
+          format: int32
+          nullable: true
+        currentPage:
+          type: integer
+          format: int32
+        totalItems:
+          type: integer
+          format: int32
+        totalPages:
+          type: integer
+          format: int32
+        links:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/CarePlus.Shared.Core.Wrapper.Extensions.LinkedResource'
+          nullable: true
+        data:
+          $ref: '#/components/schemas/CarePlus.Sandbox.Application.Department.Responses.DepartmentResponse'
+      additionalProperties: {}
+    CarePlus.Shared.Core.Wrapper.Result`1[[CarePlus.Sandbox.Application.NamedInsured.Responses.ContactResponse, CarePlus.Sandbox.Application, Version=0.0.10.0, Culture=neutral, PublicKeyToken=null]]:
+      type: object
+      properties:
+        aggregateId:
+          type: string
+          format: uuid
+          readOnly: true
+        executed:
+          type: string
+          format: date-time
+          readOnly: true
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/CarePlus.Shared.Core.Wrapper.ResponseNotificationModel'
+          nullable: true
+        succeeded:
+          type: boolean
+        title:
+          type: string
+          nullable: true
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/CarePlus.Shared.Core.Wrapper.ResponseNotificationModel'
+          nullable: true
+        status:
+          type: integer
+          format: int32
+          nullable: true
+        currentPage:
+          type: integer
+          format: int32
+        totalItems:
+          type: integer
+          format: int32
+        totalPages:
+          type: integer
+          format: int32
+        links:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/CarePlus.Shared.Core.Wrapper.Extensions.LinkedResource'
+          nullable: true
+        data:
+          $ref: '#/components/schemas/CarePlus.Sandbox.Application.NamedInsured.Responses.ContactResponse'
+      additionalProperties: {}
+    CarePlus.Shared.Core.Wrapper.Result`1[[CarePlus.Sandbox.Application.NetworkAccredited.Responses.NamedinsuredResponse, CarePlus.Sandbox.Application, Version=0.0.10.0, Culture=neutral, PublicKeyToken=null]]:
+      type: object
+      properties:
+        aggregateId:
+          type: string
+          format: uuid
+          readOnly: true
+        executed:
+          type: string
+          format: date-time
+          readOnly: true
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/CarePlus.Shared.Core.Wrapper.ResponseNotificationModel'
+          nullable: true
+        succeeded:
+          type: boolean
+        title:
+          type: string
+          nullable: true
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/CarePlus.Shared.Core.Wrapper.ResponseNotificationModel'
+          nullable: true
+        status:
+          type: integer
+          format: int32
+          nullable: true
+        currentPage:
+          type: integer
+          format: int32
+        totalItems:
+          type: integer
+          format: int32
+        totalPages:
+          type: integer
+          format: int32
+        links:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/CarePlus.Shared.Core.Wrapper.Extensions.LinkedResource'
+          nullable: true
+        data:
+          $ref: '#/components/schemas/CarePlus.Sandbox.Application.NetworkAccredited.Responses.NamedinsuredResponse'
+      additionalProperties: {}
+    CarePlus.Shared.Core.Wrapper.Result`1[[System.Collections.Generic.List`1[[CarePlus.Shared.Core.Wrapper.ResponseNotificationModel, CarePlus.Shared.Core, Version=2.0.15.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]:
+      type: object
+      properties:
+        aggregateId:
+          type: string
+          format: uuid
+          readOnly: true
+        executed:
+          type: string
+          format: date-time
+          readOnly: true
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/CarePlus.Shared.Core.Wrapper.ResponseNotificationModel'
+          nullable: true
+        succeeded:
+          type: boolean
+        title:
+          type: string
+          nullable: true
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/CarePlus.Shared.Core.Wrapper.ResponseNotificationModel'
+          nullable: true
+        status:
+          type: integer
+          format: int32
+          nullable: true
+        currentPage:
+          type: integer
+          format: int32
+        totalItems:
+          type: integer
+          format: int32
+        totalPages:
+          type: integer
+          format: int32
+        links:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/CarePlus.Shared.Core.Wrapper.Extensions.LinkedResource'
+          nullable: true
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/CarePlus.Shared.Core.Wrapper.ResponseNotificationModel'
+          nullable: true
+      additionalProperties: {}
+    FluentValidation.Results.ValidationFailure:
+      type: object
+      properties:
+        propertyName:
+          type: string
+          nullable: true
+        errorMessage:
+          type: string
+          nullable: true
+        attemptedValue:
+          nullable: true
+        customState:
+          nullable: true
+        severity:
+          $ref: '#/components/schemas/FluentValidation.Severity'
+        errorCode:
+          type: string
+          nullable: true
+        formattedMessagePlaceholderValues:
+          type: object
+          additionalProperties:
+            nullable: true
+          nullable: true
+      additionalProperties: false
+    FluentValidation.Results.ValidationResult:
+      type: object
+      properties:
+        isValid:
+          type: boolean
+          readOnly: true
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/FluentValidation.Results.ValidationFailure'
+          nullable: true
+        ruleSetsExecuted:
+          type: array
+          items:
+            type: string
+          nullable: true
+      additionalProperties: false
+    FluentValidation.Severity:
+      enum:
+        - Error
+        - Warning
+        - Info
+      type: string
+    Microsoft.AspNetCore.Mvc.ProblemDetails:
+      type: object
+      properties:
+        type:
+          type: string
+          nullable: true
+        title:
+          type: string
+          nullable: true
+        status:
+          type: integer
+          format: int32
+          nullable: true
+        detail:
+          type: string
+          nullable: true
+        instance:
+          type: string
+          nullable: true
+      additionalProperties: {}
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      description: Input your Bearer token in this format - Bearer {your token here} to access this API
+      name: Authorization
+      in: header
+security:
+  - Bearer: []
