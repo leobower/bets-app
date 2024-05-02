@@ -92,24 +92,24 @@ components:
         championship: Uefa Champions League
         awayTeamScore: '2'
         homeTeamScore: '3'
-    request-create-bet:
-      title: Root Type for request-create-bet
-      description: Request data to create a bet
-      type: object
-      properties:
-        homeTeamScore:
-          type: string
-        awayTeamScore:
-          type: string
-        championship:
-          type: string
-        match:
-          type: string
-        email:
-          type: string
-      example:
-        homeTeamScore: '3'
-        awayTeamScore: '2'
-        championship: Uefa Champions League
-        match: 1X-DC
-        email: joe@doe.com
+   # request-create-bet:
+   #   title: Root Type for request-create-bet
+   #   description: Request data to create a bet
+   #   type: object
+   #   properties:
+   #     homeTeamScore:
+   #       type: string
+   #     awayTeamScore:
+   #       type: string
+   #     championship:
+   #       type: string
+   #     match:
+   #       type: string
+   #     email:
+   #       type: string
+   #   example:
+   #     homeTeamScore: '3'
+   #     awayTeamScore: '2'
+   #     championship: Uefa Champions League
+   #     match: 1X-DC
+   #     email: joe@doe.com
