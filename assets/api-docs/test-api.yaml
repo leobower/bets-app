@@ -15,6 +15,7 @@ servers:
 
 tags:
   - name: bets
+  - description: Bets API will provide a friendly interface to support you in your family games
 
 paths:
   /bets:
@@ -63,6 +64,8 @@ paths:
                     awayTeamScore: '2'
                     homeTeamScore: '3'
           description: ''
+        default:
+          description: Unexpected error
       operationId: create-bet
       summary: Create Bet
 components:
