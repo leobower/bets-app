@@ -48,4 +48,4 @@ jobs:
 
       - name: Run contract tests
         run:  |
-          prism mock assets/api-docs/bets-api.yaml & sleep 2 && newman run assets/api-tests/bets.postman.json
+          prism mock assets/api-docs/test-api.yaml & sleep 2 && newman run assets/api-tests/bets.postman.json
