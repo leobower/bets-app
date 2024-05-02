@@ -32,7 +32,7 @@ rules:
   cp-property-description:
     description: All schema properties should have a description.
     message: Property should have a description.
-    severity: warn
+    severity: warn 
     resolved: false
     given: $..properties[?(@object() && @.$ref == undefined)]
     then:
