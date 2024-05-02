@@ -15,6 +15,7 @@ servers:
 
 tags:
   - name: bets
+    description: Bets API will provide a friendly interface to support you in your family games
 
 paths:
   /bets:
@@ -30,6 +31,7 @@ paths:
         url: 'https://bets.api.com'
         description: Production Environment
     post:
+      description: 'Create a new bet'
       requestBody:
         content:
           application/json:
@@ -62,9 +64,11 @@ paths:
                     championship: Uefa Champions League
                     awayTeamScore: '2'
                     homeTeamScore: '3'
-          description: ''
+          description: 'Success'
+        #default:
+          #description: 'Unexpected error'
       operationId: create-bet
-      summary: Create Bet
+      summary: 'Create Bet'
 components:
   schemas:
     bet-created:
@@ -88,24 +92,24 @@ components:
         championship: Uefa Champions League
         awayTeamScore: '2'
         homeTeamScore: '3'
-    request-create-bet:
-      title: Root Type for request-create-bet
-      description: Request data to create a bet
-      type: object
-      properties:
-        homeTeamScore:
-          type: string
-        awayTeamScore:
-          type: string
-        championship:
-          type: string
-        match:
-          type: string
-        email:
-          type: string
-      example:
-        homeTeamScore: '3'
-        awayTeamScore: '2'
-        championship: Uefa Champions League
-        match: 1X-DC
-        email: joe@doe.com
+   # request-create-bet:
+   #   title: Root Type for request-create-bet
+   #   description: Request data to create a bet
+   #   type: object
+   #   properties:
+   #     homeTeamScore:
+   #       type: string
+   #     awayTeamScore:
+   #       type: string
+   #     championship:
+   #       type: string
+   #     match:
+   #       type: string
+   #     email:
+   #       type: string
+   #   example:
+   #     homeTeamScore: '3'
+   #     awayTeamScore: '2'
+   #     championship: Uefa Champions League
+   #     match: 1X-DC
+   #     email: joe@doe.com
