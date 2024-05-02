@@ -29,3 +29,12 @@ rules:
     then:
       field: description
       function: truthy
+  cp-property-description:
+    description: All schema properties should have a description.
+    message: Property should have a description.
+    severity: warn
+    resolved: false
+    given: $..properties[?(@object() && @.$ref == undefined)]
+    then:
+      field: description
+      function: truthy

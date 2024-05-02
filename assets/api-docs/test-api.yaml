@@ -15,7 +15,7 @@ servers:
 
 tags:
   - name: bets
-  - description: Bets API will provide a friendly interface to support you in your family games
+    description: Bets API will provide a friendly interface to support you in your family games
 
 paths:
   /bets:
