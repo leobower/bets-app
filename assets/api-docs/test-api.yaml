@@ -15,7 +15,7 @@ servers:
 
 tags:
   - name: bets
-    description: Bets API will provide a friendly interface to support you in your family games
+    #description: Bets API will provide a friendly interface to support you in your family games
 
 paths:
   /bets:
@@ -31,6 +31,7 @@ paths:
         url: 'https://bets.api.com'
         description: Production Environment
     post:
+      description: 'Create a new bet'
       requestBody:
         content:
           application/json:
@@ -63,11 +64,11 @@ paths:
                     championship: Uefa Champions League
                     awayTeamScore: '2'
                     homeTeamScore: '3'
-          description: ''
-        default:
-          description: Unexpected error
+          description: 'Success'
+        #default:
+          #description: 'Unexpected error'
       operationId: create-bet
-      summary: Create Bet
+      summary: 'Create Bet'
 components:
   schemas:
     bet-created:
